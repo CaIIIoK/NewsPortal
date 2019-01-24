@@ -1,0 +1,62 @@
+﻿<h1>News Portal</h1>
+<input type="button" value="Add Article" class="btn btn-default" (click)="add()" />
+<table *ngIf="tableMode; else create" class="table table-striped">
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Text</td>
+            <td>Author</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let p of articles">
+            <ng-template [ngIf]="article?.id != p.id" [ngIfElse]="edit">
+                <td>{{p?.headline}}</td>
+                <td>{{p?.articletext}}</td>
+                <td>{{p?.author}}</td>
+                <td>
+                    <button class="btn btn-sm btn-primary" (click)="editArticle(p)">Edit</button>
+                    <button class="btn btn-sm btn-danger" (click)="delete(p)">Delete</button>
+                </td>
+            </ng-template>
+        </tr>
+    </tbody>
+</table>
+
+<!--Template for editing-->
+<ng-template #edit>
+    <td>
+        <input type="text" [(ngModel)]="article.headline" class="form-control" />
+    </td>
+    <td>
+        <input type="text" [(ngModel)]="article.articletext" class="form-control" />
+    </td>
+    <td>
+        <input type="text" [(ngModel)]="article.author" class="form-control" />
+    </td>
+    <td>
+        <input type="button" value="Save" (click)="save()" class="btn btn-sm btn-success" />
+        <input type="button" value="Cancel" (click)="cancel()" class="btn btn-sm btn-warning" />
+    </td>
+</ng-template>
+
+<!--Template for adding-->
+<ng-template #create>
+    <div class="form-group">
+        <label>Name of the artcile</label>
+        <input type="text" [(ngModel)]="article.headline" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Text of the article</label>
+        <input type="text" [(ngModel)]="article.articletext" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Author</label>
+        <input type="text" [(ngModel)]="article.author" class="form-control" />
+    </div>
+    <div>
+        <input type="button" value="Save" (click)="save()" class="btn btn-success" />
+        <input type="button" value="Cancel" (click)="cancel()" class="btn btn-warning" />
+    </div>
+</ng-template>

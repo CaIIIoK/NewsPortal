@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2050
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewsPortal", "AspDotNetCoreAngularWebApp\NewsPortal.csproj", "{39149D0D-6C27-4FA5-9AA8-7C9F6E6A5C68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspDotNetCoreAngularWebApp", "AspDotNetCoreAngularWebApp\AspDotNetCoreAngularWebApp.csproj", "{39149D0D-6C27-4FA5-9AA8-7C9F6E6A5C68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

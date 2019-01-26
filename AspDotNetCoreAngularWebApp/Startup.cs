@@ -22,11 +22,6 @@ namespace AspDotNetCoreAngularWebApp
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-
-                app.UseWebpackDevMiddleware(new WebpackDevMiddlewareOptions
-                {
-                    HotModuleReplacement = true
-                });
             }
 
             app.UseDefaultFiles();

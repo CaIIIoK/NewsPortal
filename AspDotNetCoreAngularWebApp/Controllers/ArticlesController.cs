@@ -6,10 +6,10 @@ using AspDotNetCoreAngularWebApp.Models;
 namespace AspDotNetCoreAngularWebApp.Controllers
 {
     [Route("api/articles")]
-    public class ProductController : Controller
+    public class ArticlesController : Controller
     {
         ApplicationContext db;
-        public ProductController(ApplicationContext context)
+        public ArticlesController(ApplicationContext context)
         {
             db = context;
             if (!db.Articles.Any())
